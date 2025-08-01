@@ -1,17 +1,98 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
+  background: #f9f9fb;
+  color: #333;
 }
+
 header {
-  background: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #3c1361;
+  padding: 10px 20px;
   color: white;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  padding: 40px 20px;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.hero-text h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  background: #eef1f7;
+}
+
+.service-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: bold;
+}
+
+.tech-news {
+  background: #d9d4e7;
   padding: 20px;
   text-align: center;
 }
-@media (max-width: 600px) {
-  header {
-    font-size: 18px;
-  }
+
+footer {
+  background: #3c1361;
+  padding: 20px;
+  text-align: center;
 }
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
