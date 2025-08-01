@@ -47,19 +47,21 @@
             <button class="cta-button" onclick="scrollToSection('solutions')">Learn More</button>
         </div>
         <div class="hero-image">
-            <section class="video-section">
-  <div class="container">
-     <div class="video-wrapper">
-      <iframe src="/images/home.mp4" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" 
-              allowfullscreen
-              loading="lazy">
-      </iframe>
-      
-    </div>
-  </div>
-</section>
+          <div class="video-container">
+          <iframe 
+            id="yt-player"
+            src="/images/home.mp4"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop"
+            allowfullscreen>
+          </iframe>
+            <div class="custom-controls">
+            <button class="play-btn"><i class="fas fa-play"></i></button>
+            <div class="progress-bar">
+            <div class="progress"></div>
+            </div>
+          </div>
+        </div>
           <!--  <img src="/images/logo.jpg" alt="AI Technology"> -->
         </div>
     </section>
