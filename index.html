@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menduce - IT Services</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Welcome to My Website</h1>
+    <div class="logo">
+      <img src="logo.jpg" alt="Menduce Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Clients</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <p>This is the homepage.</p>
-  </main>
+
+  <section class="hero">
+    <div class="hero-image">
+      <img src="https://source.unsplash.com/600x400/?technology,data" alt="Tech Image" />
+    </div>
+    <div class="hero-text">
+      <h1>Empowering Businesses with Smart IT Solutions</h1>
+      <p>We provide innovative technology services tailored to your enterprise needs.</p>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="service-card">Reports & Dashboards</div>
+    <div class="service-card">Artificial Intelligence / Machine Learning</div>
+    <div class="service-card">Data Analysis</div>
+    <div class="service-card">Enterprise Applications</div>
+  </section>
+
+  <section class="tech-news">
+    <h2>Latest Tech News</h2>
+    <marquee behavior="scroll" direction="left">
+      AI trends reshaping industries • Cloud platforms dominate 2025 IT budgets • Data security takes center stage •
+      Low-code tools gain popularity • Smart enterprise automation
+    </marquee>
+  </section>
+
+  <footer>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
+
