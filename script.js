@@ -52,4 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('Contact email link clicked');
   // Example: gtag('event', 'email_click', { 'event_category': 'Contact' });
 }
+
+    // Add smooth scrolling to all navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 });
