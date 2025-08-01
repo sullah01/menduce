@@ -46,4 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+// Contact us
+    function trackEmailClick() {
+  // You can add analytics tracking here
+  console.log('Contact email link clicked');
+  // Example: gtag('event', 'email_click', { 'event_category': 'Contact' });
+}
 });
