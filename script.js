@@ -1,30 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Slider functionality
-    const sliderContainer = document.querySelector('.slider-container');
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.slider-prev');
-    const nextBtn = document.querySelector('.slider-next');
-    let currentIndex = 0;
-    const slideCount = slides.length;
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu');
+    const nav = document.querySelector('nav ul');
 
-    function updateSlider() {
-        sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    mobileMenuBtn.addEventListener('click', function() {
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Testimonial Slider
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
     }
 
     function nextSlide() {
-        currentIndex = (currentIndex + 1) % slideCount;
-        updateSlider();
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
     }
 
     function prevSlide() {
-        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-        updateSlider();
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
     }
 
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
 
-    // Auto-advance slides every 5 seconds
+    // Auto-slide every 5 seconds
     setInterval(nextSlide, 5000);
 
     // Smooth scrolling for anchor links
@@ -39,16 +46,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Mobile menu toggle (would need additional HTML/CSS for full implementation)
-    // This is a placeholder for future enhancement
-    const mobileMenuBtn = document.createElement('button');
-    mobileMenuBtn.className = 'mobile-menu-btn';
-    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    document.querySelector('header').appendChild(mobileMenuBtn);
-
-    mobileMenuBtn.addEventListener('click', function() {
-        document.querySelector('nav').classList.toggle('show');
-    });
 });
-
