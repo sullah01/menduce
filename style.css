@@ -302,3 +302,19 @@ footer {
         margin-top: 2rem;
     }
 }
+/*Contact Us*/
+.contact-link {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-link:hover {
+  color: #e0aaff; /* Your accent color */
+  transform: translateY(-2px);
+}
+
+.contact-link i {
+  font-size: 0.9em;
+}
