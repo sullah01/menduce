@@ -349,9 +349,8 @@ footer {
     box-shadow: 0 5px 15px rgba(66, 36, 96, 0.1);
 }
 
-.industry-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(66, 36, 96, 0.2);
+.industry-card:hover .industry-icon i {
+    transform: scale(1.1); /* Subtle hover effect */
 }
 
 .industry-icon {
@@ -381,4 +380,9 @@ footer {
 .industry-card p {
     color: #666;
     line-height: 1.6;
+}
+.industry-icon i { /* Targets Font Awesome icons */
+    font-size: 2.5rem;
+    color: #422460; /* Primary purple */
+    transition: transform 0.3s;
 }
