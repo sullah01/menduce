@@ -318,3 +318,67 @@ footer {
 .contact-link i {
   font-size: 0.9em;
 }
+/* Industries Section */
+.industries-section {
+    padding: 80px 0;
+    background-color: #f9f6fc; /* Light purple background */
+}
+
+.industries-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #422460;
+    font-size: 2.5rem;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.industry-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(66, 36, 96, 0.1);
+}
+
+.industry-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(66, 36, 96, 0.2);
+}
+
+.industry-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0e5ff;
+    border-radius: 50%;
+}
+
+.industry-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: invert(16%) sepia(47%) saturate(998%) hue-rotate(244deg) brightness(90%) contrast(89%);
+}
+
+.industry-card h3 {
+    color: #422460;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.industry-card p {
+    color: #666;
+    line-height: 1.6;
+}
