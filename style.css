@@ -76,7 +76,7 @@ nav a:hover, nav a.active {
     display: flex;
     align-items: center;
     padding: 5rem 10%;
-    background: url('/images/logo.jpg') no-repeat right center/cover !important;
+    background: url('/images/logo-m.jpg') no-repeat right center/cover !important;
     background-size: auto 80%; /* Adjust height percentage */
     color: white; /* Ensures text remains readable */
 }
@@ -112,7 +112,7 @@ nav a:hover, nav a.active {
     background: var(--secondary);
 }
 
-.hero-image {
+/*.hero-image {
     flex: 1;
     text-align: center;
 }
@@ -121,7 +121,7 @@ nav a:hover, nav a.active {
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(66, 36, 96, 0.2);
-}
+}*/
 
 /* Solutions Section */
 .solutions-section {
