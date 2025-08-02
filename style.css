@@ -322,7 +322,7 @@ footer {
 /* Industries Section */
 .industries-section {
     padding: 80px 0;
-    background-color: #f9f6fc; /* Light purple background */
+    background-color: #422460; /* Light purple background */
 }
 
 .industries-section h2 {
@@ -468,4 +468,159 @@ footer {
     .about-image {
         order: -1;
     }
+}
+/* Testimonials */
+.testimonials {
+    padding: 5rem 10%;
+    background: var(--light);
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary);
+}
+
+.slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.slide span {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.slider-nav {
+    margin-top: 2rem;
+}
+
+.slider-nav button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 3rem 10% 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content, .hero-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-image {
+        margin-top: 2rem;
+    }
+}
+/*Contact Us*/
+.contact-link {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-link:hover {
+  color: #e0aaff; /* Your accent color */
+  transform: translateY(-2px);
+}
+
+.contact-link i {
+  font-size: 0.9em;
 }
