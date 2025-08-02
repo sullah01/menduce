@@ -54,16 +54,16 @@ nav ul {
     gap: 2rem;
 }
 
-nav ul:hover, nav ul.active {
-    color: var(--light);
-}
-
 nav a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
     transition: color 0.3s;
 }
+nav a:hover, nav a.active {
+    color: var(--light);
+}
+
 
 .mobile-menu {
     display: none;
