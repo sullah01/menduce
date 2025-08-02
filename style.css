@@ -76,7 +76,7 @@ nav a:hover, nav a.active {
     display: flex;
     align-items: center;
     padding: 5rem 10%;
-    background-color: var(--primary);
+    background: var(--primary);
     /*background: url('/images/logo-m.jpg') no-repeat right center/cover !important;*/
  /*   background-size: auto 80%;*/ /* Adjust height percentage */
  /*   color: var(--primary);*/ /* Ensures text remains readable */
