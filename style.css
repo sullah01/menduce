@@ -74,7 +74,7 @@ nav a:hover, nav a.active {
     display: flex;
     align-items: center;
     padding: 5rem 10%;
-    background: linear-gradient(135deg, rgba(66,36,96,0.9) 0%, rgba(106,58,156,0.9) 100%), url('/images/logo.jpg') center/cover no-repeat !important;
+    background: linear-gradient(135deg, rgba(66,36,96,1) 0%, rgba(66,36,96,0.9) 100%), url('/images/logo.jpg') center/cover no-repeat !important;
     color: white; /* Ensures text remains readable */
 }
 
