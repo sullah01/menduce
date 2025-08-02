@@ -110,7 +110,7 @@ nav a:hover, nav a.active {
 }
 
 .cta-button:hover {
-    background: var(--secondary);
+    background: var(--mediumgrey);
 }
 
 /*.hero-image {
