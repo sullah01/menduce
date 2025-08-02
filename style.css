@@ -79,7 +79,7 @@ nav a:hover, nav a.active {
     background-color: var(--primary);
     background: url('/images/logo-m.jpg') no-repeat right center/cover !important;
     background-size: auto 80%; /* Adjust height percentage */
-    color: white; /* Ensures text remains readable */
+    /*color: white;*/ /* Ensures text remains readable */
 }
 
 .hero-content {
