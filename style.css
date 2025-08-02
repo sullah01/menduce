@@ -13,6 +13,7 @@
     --light: #f8f0ff;
     --dark: #1e0a33;
     --lightgrey: #DEDEDE;
+    --mediumgrey: #969696;
 }
 
 body {
@@ -87,13 +88,13 @@ nav a:hover, nav a.active {
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    color: var(--lightgrey);
+    color: var(--mediumgrey);
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #555;
+    color: var(--lightgrey);
 }
 
 .cta-button {
@@ -123,13 +124,13 @@ nav a:hover, nav a.active {
 }
 
 /* Solutions Section */
-.solutions {
-    padding: 5rem 10%;
+.solutions-section {
+    padding: 80px 0;
     text-align: center;
     background: white;
 }
 
-.solutions h2 {
+.solutions-section h2 {
     text-align: center;
     margin-bottom: 50px;
     font-size: 2.5rem;
