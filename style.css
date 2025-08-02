@@ -128,7 +128,7 @@ nav a:hover, nav a.active {
 .solutions-section {
     padding: 80px 0;
     text-align: center;
-    background: white;
+    background: var(--primary);
 }
 
 .solutions-section h2 {
