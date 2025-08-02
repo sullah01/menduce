@@ -12,6 +12,7 @@
     --accent: #e0aaff;
     --light: #f8f0ff;
     --dark: #1e0a33;
+    --lightgrey: #DEDEDE;
 }
 
 body {
@@ -85,7 +86,7 @@ nav a:hover, nav a.active {
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    color: var(--dark);
+    color: var(--lightgrey);
 }
 
 .hero-content p {
