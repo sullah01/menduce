@@ -1,11 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu');
-    const nav = document.querySelector('nav ul');
-
-    mobileMenuBtn.addEventListener('click', function() {
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('active');
     });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.mobile-menu-toggle').classList.remove('active');
+        document.querySelector('.nav-links').classList.remove('active');
+          });
+        });
 
     // Testimonial Slider
     const slides = document.querySelectorAll('.slide');
