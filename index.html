@@ -51,7 +51,11 @@
         <div class="hero-content">
             <h1>AI-Powered Enterprise Solutions</h1>
             <p>Transforming businesses with cutting-edge artificial intelligence and data-driven strategies.</p>
-            <button class="cta-button" href="mailto:info@menduce.com?subject=Website%20Inquiry&body=Dear%20Menduce%20Team,%0A%0AI%20would%20like%20to%20inquire%20about:%0A%0A[Please%20briefly%20describe%20your%20needs]%0A%0ABest%20regards," onclick="trackEmailClick()">Learn More</button>
+          <!--  <button class="cta-button" href="mailto:info@menduce.com?subject=Website%20Inquiry&body=Dear%20Menduce%20Team,%0A%0AI%20would%20like%20to%20inquire%20about:%0A%0A[Please%20briefly%20describe%20your%20needs]%0A%0ABest%20regards," onclick="trackEmailClick()">Learn More</button>-->
+        
+            <!-- Link/Button to trigger the form -->
+            <button id="contactBtn" class="cta-button">Contact Us</button>  
+            
         </div>
       <!--  <div class="hero-image">
           <img src="/images/logo.jpg" alt="AI Technology">
@@ -63,6 +67,33 @@
           <!--<source src="data-analysis-demo.webm" type="video/webm">-->
         </video>
       </div>
+     
+<!-- Form Modal (hidden by default) -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Get in Touch</h3>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="company">Company Name:</label>
+        <input type="text" id="company" name="company" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="inquiry">Your Inquiry:</label>
+        <textarea id="inquiry" name="inquiry" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</div>
     </section>
 
     <!-- Solutions Section -->
