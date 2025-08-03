@@ -68,4 +68,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+    // Modal functionality
+const modal = document.getElementById("contactModal");
+const btn = document.getElementById("contactBtn");
+const span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Form submission
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+  const formData = {
+    name: document.getElementById("name").value,
+    company: document.getElementById("company").value,
+    email: document.getElementById("email").value,
+    inquiry: document.getElementById("inquiry").value
+  };
+
+  // Send email using FormSubmit.co (free service)
+  fetch("https://formsubmit.co/ajax/info@meduce.com", {
+    method: "POST",
+    headers: { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert("Thank you! Your message has been sent.");
+    document.getElementById("contactForm").reset();
+    modal.style.display = "none";
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert("There was an error sending your message. Please try again.");
+  });
+});
 });
