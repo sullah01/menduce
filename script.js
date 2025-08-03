@@ -118,5 +118,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     console.error('Error:', error);
     alert("There was an error sending your message. Please try again.");
   });
+
+    
 });
 });
