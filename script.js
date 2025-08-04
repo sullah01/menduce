@@ -100,7 +100,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   };
 
   // Send email using FormSubmit.co (free service)
-  fetch("https://formsubmit.co/ajax/info@meduce.com", {
+  fetch("https://formsubmit.co/ajax/info@menduce.com", {
     method: "POST",
     headers: { 
       'Content-Type': 'application/json',
