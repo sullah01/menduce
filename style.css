@@ -68,6 +68,12 @@ header {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    .menu-icon {
+        display: block !important; /* Force show the icon on mobile */
+  }
+    .desktop-icon{
+        display: none; /*Hide desktop menu*/
+    }
   .mobile-menu-toggle {
     display: block;
   }
