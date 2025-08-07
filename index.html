@@ -11,6 +11,27 @@
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/images/site.webmanifest" />
+    <!DOCTYPE html>
+    <style>
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+            }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header/Navigation -->
@@ -50,7 +71,7 @@
     <section id ="hero" class="hero">
         <div class="hero-content">
             <h1>AI-Powered Enterprise Solutions</h1>
-            <p>Transforming businesses with cutting-edge artificial intelligence and data-driven strategies.</p>
+            <p>Transforming businesses with cutting-edge artificial intelligence and data-driven strategies.</p>men
           <!--  <button class="cta-button" href="mailto:info@menduce.com?subject=Website%20Inquiry&body=Dear%20Menduce%20Team,%0A%0AI%20would%20like%20to%20inquire%20about:%0A%0A[Please%20briefly%20describe%20your%20needs]%0A%0ABest%20regards," onclick="trackEmailClick()">Learn More</button>-->
      
               <!-- Link/Button to trigger the form -->
