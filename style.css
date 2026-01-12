@@ -6,10 +6,11 @@
 }
 
 :root {
-    --primary: #10B981;
-    --primary-light: #D1FAE5;
-    --secondary: #3B82F6;
-    --accent: #8B5CF6;
+    --primary: #422460;
+    --primary-light: #F0E6FF;
+    --primary-dark: #1e0a33;
+    --secondary: #6a3a9c;
+    --accent: #e0aaff;
     --light: #F8FAFC;
     --lighter: #FFFFFF;
     --dark: #1F2937;
@@ -143,7 +144,7 @@ header {
 /* ===== HERO SECTION ===== */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    background: linear-gradient(rgba(66, 36, 96, 0.85), rgba(106, 58, 156, 0.75)),
                 url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
     background-size: cover;
     background-position: center;
@@ -169,7 +170,7 @@ header {
 }
 
 .hero-content h1 {
-    color: var(--dark);
+    color: var(--primary);
     font-size: 3rem;
 }
 
@@ -522,11 +523,12 @@ header {
 }
 
 .news-category.security {
-    background: #EF4444;
+    background: var(--secondary);
 }
 
 .news-category.innovation {
-    background: var(--secondary);
+    background: var(--accent);
+    color: var(--primary-dark);
 }
 
 .news-category.issues {
@@ -611,9 +613,20 @@ header {
     background: var(--secondary);
 }
 
+/* ===== FORM VALIDATION STYLES ===== */
+.form-group input:valid,
+.form-group textarea:valid {
+    border-color: var(--primary);
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: #EF4444;
+}
+
 /* ===== FOOTER ===== */
 footer {
-    background: var(--dark);
+    background: var(--primary-dark);
     color: white;
     padding: 4rem 0 2rem;
 }
@@ -633,6 +646,7 @@ footer {
 .footer-links h4,
 .footer-social h4 {
     margin-bottom: 1.5rem;
+    color: var(--accent);
 }
 
 .footer-links ul {
@@ -648,7 +662,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .social-icons {
@@ -670,7 +684,8 @@ footer {
 }
 
 .social-icons a:hover {
-    background: var(--primary);
+    background: var(--accent);
+    color: var(--primary-dark);
     transform: translateY(-3px);
 }
 
@@ -681,8 +696,12 @@ footer {
 }
 
 .footer-bottom a {
-    color: var(--primary-light);
+    color: var(--accent);
     text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -765,4 +784,20 @@ footer {
     .contact-wrapper {
         padding: 2rem 1rem;
     }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.6s ease forwards;
 }
