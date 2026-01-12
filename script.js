@@ -62,7 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
     prevBtn.addEventListener('click', prevSlide);
 
     // Auto-slide testimonials
-    setInterval(nextSlide, 5000);
+    let slideInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-slide on hover
+    const slider = document.querySelector('.testimonial-slider');
+    slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    slider.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(nextSlide, 5000);
+    });
 
     // Dot navigation
     dots.forEach((dot, index) => {
@@ -120,25 +127,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Create email body
-        const emailBody = `
-            New Service Request from Menduce Website
-            ========================================
-            
-            Contact Information:
-            --------------------
-            Name: ${formData.name}
-            Email: ${formData.email}
-            Company: ${formData.company}
-            
-            Service Interested: ${formData.service}
-            
-            Project Details:
-            ----------------
-            ${formData.message}
-            
-            Submitted: ${new Date().toLocaleString()}
-        `;
+        // Show loading state
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
         
         // Using FormSubmit.co (free service)
         fetch('https://formsubmit.co/ajax/info@menduce.com', {
@@ -154,7 +147,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 service: formData.service,
                 message: formData.message,
                 _subject: `New Service Request: ${formData.company}`,
-                _template: 'table'
+                _template: 'table',
+                _captcha: 'false'
             })
         })
         .then(response => {
@@ -164,7 +158,10 @@ document.addEventListener('DOMContentLoaded', function() {
             throw new Error('Network response was not ok.');
         })
         .then(data => {
+            // Show success message
             alert('Thank you! Your service request has been sent. We\'ll contact you within 24 hours.');
+            
+            // Reset form
             contactForm.reset();
             
             // Reset form validation states
@@ -175,6 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             console.error('Error:', error);
             alert('There was an error sending your request. Please try again or email us directly at info@menduce.com');
+        })
+        .finally(() => {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
         });
     });
 
@@ -189,6 +191,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.remove('valid');
             }
         });
+        
+        // Add purple border on focus
+        element.addEventListener('focus', function() {
+            this.style.borderColor = 'var(--primary)';
+        });
+        
+        element.addEventListener('blur', function() {
+            if (!this.value) {
+                this.style.borderColor = '';
+            }
+        });
     });
 
     // Parallax effect for hero section
@@ -196,7 +209,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero');
         if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            const rate = scrolled * -0.5;
+            hero.style.transform = `translateY(${rate}px)`;
         }
     });
 
@@ -215,23 +229,94 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.service-row, .industry-card, .news-card').forEach(element => {
+    document.querySelectorAll('.service-row, .industry-card, .news-card, .testimonial-slide').forEach(element => {
+        element.style.opacity = '0';
         observer.observe(element);
     });
 
-    // Add CSS for animations
-    const style = document.createElement('style');
-    style.textContent = `
-        .service-row, .industry-card, .news-card {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+    // Tech news card hover effects
+    document.querySelectorAll('.news-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const category = this.querySelector('.news-category');
+            if (category.classList.contains('ai')) {
+                this.style.borderColor = 'var(--primary)';
+            } else if (category.classList.contains('security')) {
+                this.style.borderColor = 'var(--secondary)';
+            } else if (category.classList.contains('innovation')) {
+                this.style.borderColor = 'var(--accent)';
+            } else if (category.classList.contains('issues')) {
+                this.style.borderColor = '#F59E0B';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.borderColor = 'transparent';
+        });
+    });
+
+    // Update current year in footer
+    const yearSpan = document.createElement('span');
+    yearSpan.textContent = new Date().getFullYear();
+    const footerText = document.querySelector('.footer-bottom p');
+    if (footerText) {
+        footerText.innerHTML = footerText.innerHTML.replace('2024', yearSpan.textContent);
+    }
+
+    // Add scroll to top button
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    scrollToTopBtn.className = 'scroll-to-top';
+    document.body.appendChild(scrollToTopBtn);
+
+    // Style scroll to top button
+    const scrollToTopStyle = document.createElement('style');
+    scrollToTopStyle.textContent = `
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(66, 36, 96, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
         }
         
-        .animate-in {
-            opacity: 1;
-            transform: translateY(0);
+        .scroll-to-top:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(106, 58, 156, 0.4);
+        }
+        
+        .scroll-to-top.show {
+            display: flex;
         }
     `;
-    document.head.appendChild(style);
+    document.head.appendChild(scrollToTopStyle);
+
+    // Show/hide scroll to top button
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+
+    // Scroll to top functionality
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 });
