@@ -3,295 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menduce | AI & Enterprise Solutions</title>
+    <title>Menduce | AI & Tech Solutions</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-    <link rel="shortcut icon" href="/images/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-    <link rel="manifest" href="/images/site.webmanifest" />
-    <!DOCTYPE html>
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/images/site.webmanifest">
 </head>
 <body>
-    <!-- Header/Navigation -->
+    <!-- Navigation -->
     <header>
         <div class="logo">
-            <img src="/images/logo.jpg" alt="menduce Logo">
-           <!-- <span>Menduce</span> -->
+            <img src="/images/logo.jpg" alt="Menduce Logo">
         </div>
-         <!-- Mobile Menu Button -->
-          <button class="mobile-menu-toggle" aria-label="Menu">
+        <button class="mobile-menu-toggle" aria-label="Menu">
             <span class="toggle-bar"></span>
             <span class="toggle-bar"></span>
             <span class="toggle-bar"></span>
-          </button>
-        
-        <!-- Navigation-->
+        </button>
         <nav class="nav-links">
             <ul>
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#industries">Industries</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li>
-                      <a href="mailto:info@menduce.com?subject=Website%20Inquiry&body=Dear%20Menduce%20Team,%0A%0AI%20would%20like%20to%20inquire%20about:%0A%0A[Please%20briefly%20describe%20your%20needs]%0A%0ABest%20regards,"
-                         onclick="trackEmailClick()">
-                        Contact
-                      </a>
-                    </li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#news">Tech News</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-     <!--   <div class="mobile-menu">
-            <i class="fas fa-bars"></i>
-        </div>-->
     </header>
 
     <!-- Hero Section -->
-    <section id ="hero" class="hero">
-        <div class="hero-content">
-            <h1>AI-Powered Enterprise Solutions</h1>
-            <p>Transforming businesses with cutting-edge artificial intelligence and data-driven strategies.</p>men
-          <!--  <button class="cta-button" href="mailto:info@menduce.com?subject=Website%20Inquiry&body=Dear%20Menduce%20Team,%0A%0AI%20would%20like%20to%20inquire%20about:%0A%0A[Please%20briefly%20describe%20your%20needs]%0A%0ABest%20regards," onclick="trackEmailClick()">Learn More</button>-->
-     
-              <!-- Link/Button to trigger the form -->
-            <button id="contactBtn" class="cta-button">Contact Us</button>  
+    <section id="home" class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <div class="tech-badge">AI-Powered Innovation</div>
+                <h1>Transforming Business with <span class="highlight">Intelligent</span> Technology</h1>
+                <p>Where advanced AI meets sustainable solutions in a seamless digital ecosystem</p>
+                <div class="hero-cta">
+                    <a href="#services" class="cta-button">Explore Services</a>
+                    <a href="#contact" class="cta-button secondary">Get Started</a>
+                </div>
+            </div>
         </div>
-<!-- Form Modal -->
-<div id="contactModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Get in Touch</h3>
-    <form id="contactForm">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="company">Company Name:</label>
-        <input type="text" id="company" name="company" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="inquiry">Your Inquiry:</label>
-        <textarea id="inquiry" name="inquiry" rows="5" required></textarea>
-      </div>
-      <div class="form-actions">
-        <button type="submit" class="submit-btn">Submit</button>
-      </div>
-    </form>
-  </div>
-</div>
-      <!--  <div class="hero-image">
-          <img src="/images/logo.jpg" alt="AI Technology">
-        </div>-->
-        <!-- Right side video -->
-      <div class="hero-video">
-        <video autoplay loop muted playsinline poster="/images/logo-m.jpg">
-          <source src="/images/home4.mp4" type="video/mp4">
-          <!--<source src="data-analysis-demo.webm" type="video/webm">-->
-        </video>
-      </div>
-     
     </section>
 
-    <!-- Solutions Section -->
-    <section id="solutions" class="solutions-section">
-        <h2>Our Solutions</h2>
-        <div class="solution-cards">
-            <div class="card">
-                <i class="fas fa-brain"></i>
-                <h3>AI & Machine Learning</h3>
-                <p>Deploy self-learning algorithms that automate complex processes.</p>
-                <p>Anticipate market trends with neural network-powered forecasting.</p>
-                <p>Tailored ML systems that evolve with your business needs.</p>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Technology Services</h2>
+                <p>Comprehensive solutions for the digital age</p>
             </div>
-            <div class="card">
-                <i class="fas fa-chart-bar"></i>
-                <h3>Data Analytics</h3>
-                <p>Unlock hidden patterns in your data with predictive analytics and AI-driven modeling.</p>
-                <p>Transform raw data into strategic decisions with real-time processing.</p>
-                <p>Tailored analytics frameworks for your business challenges.</p>
+            
+            <!-- Service 1 -->
+            <div class="service-row">
+                <div class="service-text">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Deploy intelligent algorithms that learn and adapt to your business needs. Our AI solutions automate complex processes and provide predictive insights that drive growth.</p>
+                    <ul class="service-features">
+                        <li>Predictive Analytics</li>
+                        <li>Neural Network Solutions</li>
+                        <li>Automated Decision Making</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI Technology">
+                </div>
             </div>
-            <div class="card">
-                <i class="fas fa-chart-pie"></i>
-                <h3>Reports & Dashboards</h3>
-                <p>Transform raw data into interactive, real-time dashboards that drive smarter business decisions.</p>
-                <p>Tailored reports with actionable insights, designed to highlight key metrics and trends.</p>
-                <p>Monitor KPIs at a glance with intuitive visualizations.</p>
+
+            <!-- Service 2 -->
+            <div class="service-row reverse">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Analytics">
+                </div>
+                <div class="service-text">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-network"></i>
+                    </div>
+                    <h3>Data Analytics & Intelligence</h3>
+                    <p>Transform raw data into actionable insights with our advanced analytics platform. Real-time processing and intuitive dashboards for smarter decision-making.</p>
+                    <ul class="service-features">
+                        <li>Real-time Analytics</li>
+                        <li>Interactive Dashboards</li>
+                        <li>Predictive Modeling</li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
-                <i class="fas fa-sitemap"></i>
-                <h3>Enterprise Applications</h3>
-                <p>Tailored software for your business workflows</p>
-                <p>Seamless ERP/CRM integration</p>
-                <p>Scalable architecture for growth</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-plug"></i>
-                <h3>Solutions Integration</h3> 
-                <p>Bridging legacy and modern platforms</p>
-                <p>Automated cross-system workflows</p>
-                <p>Modular future-proof architecture</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Systems Migration</h3>
-                <p>Zero-downtime transition strategies</p>
-                <p>Guaranteed data integrity validation</p>
-                <p>Cloud-native modernization</p>
+
+            <!-- Service 3 -->
+            <div class="service-row">
+                <div class="service-text">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Cloud Solutions & Migration</h3>
+                    <p>Seamless transition to cloud-native architecture with zero downtime. Our migration strategies ensure data integrity and optimal performance.</p>
+                    <ul class="service-features">
+                        <li>Zero-Downtime Migration</li>
+                        <li>Cloud Architecture Design</li>
+                        <li>Scalable Infrastructure</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline>
+                            <source src="/images/home4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Industries Section -->
-<section id="industries" class="industries-section">
-    <div class="container">
-        <h2>Industries We Serve</h2>
-        <div class="industries-grid">
-            <!-- Apparel -->
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-tshirt" style="color: #422460;"></i>
-                </div>
-                <h3>Apparel</h3>
-                <p>Custom solutions for fashion and retail industries</p>
+    <section id="industries" class="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Transform</h2>
+                <p>Expert solutions across diverse sectors</p>
             </div>
-            
-            <!-- Healthcare -->
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-heartbeat" style="color: #422460;"></i>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4>Healthcare</h4>
+                    <p>AI-driven diagnostics and patient care systems</p>
                 </div>
-                <h3>Healthcare</h3>
-                <p>Innovative tech for medical providers</p>
-            </div>
-            
-            <!-- Education -->
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-graduation-cap" style="color: #6a3a9c;"></i>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h4>Finance</h4>
+                    <p>Secure fintech solutions and risk management</p>
                 </div>
-                <h3>Education</h3>
-                <p>Digital transformation for institutions</p>
-            </div>
-            
-            <!-- Telecom -->
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-tower-cell" style="color: #422460;"></i>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h4>Retail</h4>
+                    <p>Personalized e-commerce and inventory systems</p>
                 </div>
-                <h3>Telecom</h3>
-                <p>Network optimization solutions</p>
-            </div>
-            
-            <!-- Oil & Gas -->
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-oil-well" style="color: #6a3a9c;"></i>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h4>Manufacturing</h4>
+                    <p>IoT integration and automation solutions</p>
                 </div>
-                <h3>Oil & Gas</h3>
-                <p>Industrial automation technology</p>
-            </div>
-            
-            <!-- Transportation -->
-            <div class="industry-card">
-                <div class="industry-icon">
-                    <i class="fas fa-truck" style="color: #422460;"></i>
-                </div>
-                <h3>Transportation</h3>
-                <p>Logistics and fleet management</p>
             </div>
         </div>
-    </div>
-</section>
-    <!-- About Section -->
-    <section id="about" class="about-section">
-    <div class="container">
-        <div class="about-content">
-            <h2>About Menduce</h2>
-            <p class="tagline">Where tech meets wit, and solutions don’t come with a "Ctrl+Alt+Delete" mentality.</p>
-            
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>We’re the tech whisperers who turn "It’s not working!" into "How did you even <i>do</i> that?"</p>
-                    
-                    <ul class="about-list">
-                        <li><i class="fas fa-check-circle"></i> <strong>AI/ML:</strong> Taught algorithms to predict trends (and which coffee machine will break next).</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Data Analytics:</strong> Found the "needle in the haystack" for 50+ clients (the needle was usually a spreadsheet error).</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Enterprise Apps:</strong> Built systems so intuitive, even the CEO stopped printing emails.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Solutions Integration:</strong> Made legacy systems and new tech play nice—like a corporate buddy comedy.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Systems Migration:</strong> Moved data so seamlessly, clients asked if we used teleportation.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Reports & Dashboards:</strong> Turned data chaos into visual masterpieces (goodbye, Excel Franken-reports).</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Cloud Solutions:</strong> Lifted businesses to the cloud—no fear of heights involved.</li>
-                    </ul>
-                    
-                    <p class="closing">Serving <strong>100+ clients</strong> across healthcare, finance, and retail—because even robots need a little purple magic.</p>
-                </div>
-               <div class="about-image">
-                    <img src="/images/abt.jpg" alt="Menduce Team">
-                </div> 
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Testimonials Slider -->
+    <!-- Clients Section -->
+    <section id="clients" class="clients">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted By Industry Leaders</h2>
+                <p>Partnering with innovative organizations worldwide</p>
+            </div>
+            <div class="clients-logos">
+                <div class="logo-item">TechCorp</div>
+                <div class="logo-item">DataSystems</div>
+                <div class="logo-item">Innovate Inc</div>
+                <div class="logo-item">Global Solutions</div>
+                <div class="logo-item">Future Tech</div>
+                <div class="logo-item">Digital First</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
     <section class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="slider">
-            <div class="slide active">
-                <p>"Menduce revolutionized our customer engagement with AI."</p>
-                <span>- John Doe, CEO of Visiomate</span>
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Success Stories</h2>
             </div>
-            <div class="slide">
-                <p>"Their data solutions helped us reduce costs by 30%."</p>
-                <span>- Jane Smith, CFO of DataSystems</span>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <p>"Menduce transformed our data infrastructure, resulting in a 40% increase in operational efficiency."</p>
+                        <div class="client-info">
+                            <strong>Sarah Johnson</strong>
+                            <span>CTO, TechCorp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Their AI implementation revolutionized our customer service, reducing response times by 70%."</p>
+                        <div class="client-info">
+                            <strong>Michael Chen</strong>
+                            <span>CEO, Innovate Inc</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"The cloud migration was seamless - zero downtime and improved performance across all systems."</p>
+                        <div class="client-info">
+                            <strong>David Park</strong>
+                            <span>Director, Global Solutions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
-            <div class="slide">
-                <p>"Exceptional service and innovative AI models."</p>
-                <span>- Michael Brown, CTO of Innovate</span>
+        </div>
+    </section>
+
+    <!-- Tech News Section -->
+    <section id="news" class="tech-news">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Technology Insights</h2>
+                <p>Stay updated with industry trends and challenges</p>
             </div>
-            <div class="slider-nav">
-                <button class="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="next"><i class="fas fa-chevron-right"></i></button>
+            <div class="news-grid">
+                <a href="#" class="news-card">
+                    <div class="news-category ai">AI Advancements</div>
+                    <h4>Breakthrough in Quantum Machine Learning</h4>
+                    <p>How quantum computing is revolutionizing AI model training and optimization techniques.</p>
+                </a>
+                <a href="#" class="news-card">
+                    <div class="news-category security">Security Alert</div>
+                    <h4>Critical Vulnerability in Cloud Infrastructure</h4>
+                    <p>Recent security flaws discovered in major cloud platforms - protection strategies.</p>
+                </a>
+                <a href="#" class="news-card">
+                    <div class="news-category innovation">Innovation</div>
+                    <h4>Edge Computing Transforming IoT</h4>
+                    <p>How edge computing reduces latency and improves real-time data processing.</p>
+                </a>
+                <a href="#" class="news-card">
+                    <div class="news-category issues">System Issues</div>
+                    <h4>API Gateway Failures Cause Service Disruptions</h4>
+                    <p>Analysis of recent system outages and best practices for resilient architecture.</p>
+                </a>
+                <a href="#" class="news-card">
+                    <div class="news-category ai">AI Ethics</div>
+                    <h4>Ethical AI Framework Implementation</h4>
+                    <p>New standards for responsible AI deployment in enterprise environments.</p>
+                </a>
+                <a href="#" class="news-card">
+                    <div class="news-category issues">Technology Risks</div>
+                    <h4>Supply Chain Attacks on Software Dependencies</h4>
+                    <p>Understanding and mitigating risks in third-party software components.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Start Your Digital Transformation</h2>
+                <p>Get in touch for a customized solution</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@menduce.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Mon-Fri: 9AM - 6PM EST</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="serviceRequestForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Full Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email Address *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="company" name="company" placeholder="Company Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Select Service Interested *</option>
+                                <option value="ai">AI & Machine Learning</option>
+                                <option value="analytics">Data Analytics</option>
+                                <option value="cloud">Cloud Migration</option>
+                                <option value="integration">System Integration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Project Details & Requirements *" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Request</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <!--<div class="footer-logo">
-                <img src="/images/logo.jpg" alt="menduce Logo">
-                <span>menduce</span>
-            </div>-->
-            <div class="footer-links">
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#solutions">Solutions</a></li>
-                    <li><a href="#industries">Industries</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li>
-                      <a href="mailto:info@menduce.com?subject=Website%20Inquiry&body=Dear%20Menduce%20Team,%0A%0AI%20would%20like%20to%20inquire%20about:%0A%0A[Please%20briefly%20describe%20your%20needs]%0A%0ABest%20regards," 
-                         class="contact-link"
-                         onclick="trackEmailClick()">
-                         Contact
-                      </a>
-                    </li>
-                </ul>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/images/logo.jpg" alt="Menduce Logo">
+                    <p>Intelligent technology solutions for the modern enterprise</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#news">Tech News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Menduce. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Menduce. All Rights Reserved.</p>
         </div>
     </footer>
 
