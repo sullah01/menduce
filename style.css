@@ -816,3 +816,33 @@ body {
     margin-top: 2rem;
     color: var(--secondary);
 }
+/* Case Study Styling */
+.case-study {
+    padding: 120px 0;
+}
+
+.breadcrumb {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.case-highlight {
+    background: var(--primary-light);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+}
+
+.case-cta {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--primary);
+    color: white;
+    border-radius: var(--radius);
+    text-align: center;
+}
