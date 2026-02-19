@@ -320,3 +320,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+fetch('data/case-studies.json')
+  .then(response => response.json())
+  .then(data => {
+      const container = document.querySelector('#case-studies .news-grid');
+      if(container){
+          data.forEach(item => {
+              const card = document.createElement('a');
+              card.href = item.url;
+              card.className = 'news-card';
+              card.innerHTML = `
+                  <h4>${item.title}</h4>
+                  <p>${item.result}</p>
+              `;
+              container.appendChild(card);
+          });
+      }
+  });
