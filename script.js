@@ -319,4 +319,22 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
+// Mobile dropdown menu support
+document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
+    dropdownLink.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+
+            const dropdownMenu = this.nextElementSibling;
+
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                if (menu !== dropdownMenu) {
+                    menu.classList.remove('show');
+                }
+            });
+
+            dropdownMenu.classList.toggle('show');
+        }
+    });
+});
 });
