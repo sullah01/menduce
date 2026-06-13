@@ -727,6 +727,17 @@ footer {
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: block;
+        .dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.dropdown-menu.show {
+    display: flex;
+}
     }
     
     .nav-links {
@@ -800,4 +811,46 @@ footer {
 
 .animate-in {
     animation: fadeInUp 0.6s ease forwards;
+}
+/* ===== DROPDOWN MENU ===== */
+
+.nav-links ul li {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+}
+
+.dropdown-menu a:hover {
+    background: var(--primary-light);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown > a i {
+    margin-left: 6px;
+    font-size: 0.8rem;
 }
