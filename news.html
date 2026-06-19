@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech News — Menduce</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .news-list{border-top:1px solid var(--line);}
+  .news-item{
+    display:grid;grid-template-columns:140px 1fr;gap:32px;
+    padding:32px 0;border-bottom:1px solid var(--line);
+  }
+  .news-item .tag{
+    font-family:'JetBrains Mono',monospace;font-size:0.72rem;
+    letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);
+  }
+  .news-item h3{font-size:1.25rem;margin-top:10px;}
+  .news-item p{margin-top:8px;color:var(--muted);font-size:0.94rem;max-width:560px;}
+  @media (max-width:700px){.news-item{grid-template-columns:1fr;gap:8px;}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo"><span class="node"></span>menduce</a>
+    <nav class="primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="news.html" class="active">Tech News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Get started</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-hero wrap">
+  <p class="eyebrow">Latest Technology Insights</p>
+  <h1>Stay updated with industry trends.</h1>
+  <p>Notes on AI, security, and infrastructure from our engineering team.</p>
+</div>
+
+<div class="wrap">
+  <div class="news-list">
+    <div class="news-item">
+      <span class="tag">AI Advancements</span>
+      <div>
+        <h3>Breakthrough in Quantum Machine Learning</h3>
+        <p>How quantum computing is revolutionizing AI model training and optimization techniques.</p>
+      </div>
+    </div>
+    <div class="news-item">
+      <span class="tag">Security Alert</span>
+      <div>
+        <h3>Critical Vulnerability in Cloud Infrastructure</h3>
+        <p>Recent security flaws discovered in major cloud platforms, and protection strategies for your stack.</p>
+      </div>
+    </div>
+    <div class="news-item">
+      <span class="tag">Innovation</span>
+      <div>
+        <h3>Edge Computing Transforming IoT</h3>
+        <p>How edge computing reduces latency and improves real-time data processing at the device level.</p>
+      </div>
+    </div>
+    <div class="news-item">
+      <span class="tag">System Issues</span>
+      <div>
+        <h3>API Gateway Failures Cause Service Disruptions</h3>
+        <p>An analysis of recent system outages and best practices for resilient architecture.</p>
+      </div>
+    </div>
+    <div class="news-item">
+      <span class="tag">AI Ethics</span>
+      <div>
+        <h3>Ethical AI Framework Implementation</h3>
+        <p>New standards for responsible AI deployment in enterprise environments.</p>
+      </div>
+    </div>
+    <div class="news-item">
+      <span class="tag">Technology Risks</span>
+      <div>
+        <h3>Supply Chain Attacks on Software Dependencies</h3>
+        <p>Understanding and mitigating risk in third-party software components.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col" style="max-width:280px;">
+        <a href="index.html" class="logo"><span class="node"></span>menduce</a>
+        <p class="muted" style="margin-top:14px;font-size:0.9rem;">Intelligent technology solutions for the modern enterprise.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="news.html">Tech News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@menduce.com">info@menduce.com</a></li>
+          <li><a href="tel:+14089668796">+1 (408) 966-8796</a></li>
+          <li class="muted">Mon–Fri: 9AM–6PM EST</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Menduce. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
