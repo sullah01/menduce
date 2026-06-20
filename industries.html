@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industries — Menduce</title>
+<link rel="icon" type="image/svg+xml" href="images/logo-mark.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon-32.png">
+<link rel="apple-touch-icon" href="images/icon-180.png">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .ind-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .ind-card{background:var(--surface);padding:44px;}
+  .ind-card .num{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--accent);}
+  .ind-card h2{font-size:1.6rem;margin-top:14px;}
+  .ind-card p{margin-top:14px;color:var(--muted);max-width:420px;}
+  @media (max-width:860px){.ind-grid{grid-template-columns:1fr;}.ind-card{padding:32px 26px;}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="index.html" class="logo"><svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 24V8L16 19L27 8V24" stroke="#211F1B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="19" r="2.9" fill="#795695"/></svg>menduce</a>
+    <nav class="primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="services.html" class="has-dropdown">Services
+            <svg class="caret" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="services.html#ai">AI &amp; Machine Learning</a>
+            <a href="services.html#data">Data Analytics</a>
+            <a href="services.html#cloud">Cloud &amp; Migration</a>
+            <a href="services.html#training">Training &amp; Courses</a>
+          </div>
+        </li>
+        <li>
+          <a href="industries.html" class="has-dropdown active">Industries
+            <svg class="caret" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+          <div class="dropdown">
+            <a href="industries.html#healthcare">Healthcare</a>
+            <a href="industries.html#finance">Finance</a>
+            <a href="industries.html#retail">Retail</a>
+            <a href="industries.html#manufacturing">Manufacturing</a>
+          </div>
+        </li>
+        <li><a href="clients.html">Clients</a></li>
+        <li><a href="news.html">Tech News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Get started</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="page-hero wrap">
+  <p class="eyebrow">Industries We Transform</p>
+  <h1>Expert solutions across diverse sectors.</h1>
+  <p>We build for the constraints that matter in your sector — compliance, latency, scale, or trust.</p>
+</div>
+
+<div class="wrap" style="padding:64px 0;">
+  <div class="ind-grid">
+    <div class="ind-card" id="healthcare">
+      <span class="num">Healthcare</span>
+      <h2>Diagnostics that clinicians trust</h2>
+      <p>AI-driven diagnostics and patient care systems designed around clinical workflows, not around the model.</p>
+    </div>
+    <div class="ind-card" id="finance">
+      <span class="num">Finance</span>
+      <h2>Risk made visible</h2>
+      <p>Secure fintech solutions and risk management platforms built to satisfy regulators and move fast.</p>
+    </div>
+    <div class="ind-card" id="retail">
+      <span class="num">Retail</span>
+      <h2>Personalization at scale</h2>
+      <p>Personalized e-commerce experiences and inventory systems that respond to demand in real time.</p>
+    </div>
+    <div class="ind-card" id="manufacturing">
+      <span class="num">Manufacturing</span>
+      <h2>The floor, connected</h2>
+      <p>IoT integration and automation solutions that bring real-time visibility to the production line.</p>
+    </div>
+  </div>
+</div>
+
+<section style="padding-top:0;">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;border:1px solid var(--line);padding:48px;border-radius:2px;">
+    <div>
+      <p class="eyebrow">Not seeing your sector?</p>
+      <h2 style="font-size:1.8rem;margin-top:10px;">We work beyond these four.</h2>
+    </div>
+    <a href="contact.html" class="btn btn-primary">Send an inquiry</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col" style="max-width:280px;">
+        <a href="index.html" class="logo"><svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 24V8L16 19L27 8V24" stroke="#211F1B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="19" r="2.9" fill="#795695"/></svg>menduce</a>
+        <p class="muted" style="margin-top:14px;font-size:0.9rem;">Intelligent technology solutions for the modern enterprise.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="news.html">Tech News</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@menduce.com">info@menduce.com</a></li>
+          <li><a href="tel:+14089668796">+1 (408) 966-8796</a></li>
+          <li class="muted">Mon–Fri: 9AM–6PM EST</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Menduce. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
