@@ -49,7 +49,7 @@ h1,h2,h3,h4{
 .muted{color:var(--muted);}
 
 .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
-header.site .wrap{padding-left:16px;}
+header.site .wrap{padding-left:6px;}
 
 /* focus visibility */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
