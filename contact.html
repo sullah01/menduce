@@ -31,6 +31,38 @@
   }
   .field textarea{resize:vertical;min-height:120px;}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  
+  /* Status message styles */
+  #formStatus {
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    display: none;
+    margin-top: 4px;
+  }
+  #formStatus.success {
+    display: block;
+    background: #e6f7e6;
+    color: #1a7a1a;
+    border: 1px solid #b3e0b3;
+  }
+  #formStatus.error {
+    display: block;
+    background: #fde8e8;
+    color: #a11f1f;
+    border: 1px solid #f5c6c6;
+  }
+  #formStatus.loading {
+    display: block;
+    background: #eef2f7;
+    color: #2c3e50;
+    border: 1px solid #d5dce6;
+  }
+  #sendButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
   @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}.row2{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -97,10 +129,10 @@
       </div>
     </div>
 
-    <form id="contact-form">
+    <form id="contactForm">
       <div class="row2">
         <div class="field">
-          <label for="name">Name</label>
+          <label for="name">Full Name</label>
           <input id="name" name="name" type="text" placeholder="Your full name" required>
         </div>
         <div class="field">
@@ -122,35 +154,10 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Tell us a bit about your project..."></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" style="align-self:flex-start;margin-top:8px;">Send request</button>
-      <p id="form-status" style="display:none;margin-top:6px;font-size:0.9rem;color:var(--muted);">Opening your email app...</p>
+      <button type="submit" id="sendButton" class="btn btn-primary" style="align-self:flex-start;margin-top:8px;">Send request</button>
+      <div id="formStatus"></div>
     </form>
-    <script>
-      const form = document.getElementById('contact-form');
-      const status = document.getElementById('form-status');
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value.trim();
-
-        const subject = 'New inquiry from ' + name + ' — ' + service;
-        const body =
-          'Name: ' + name + '\n' +
-          'Email: ' + email + '\n' +
-          'Service interested: ' + service + '\n\n' +
-          'Message:\n' + message;
-
-        const mailtoLink = 'mailto:info@menduce.com'
-          + '?subject=' + encodeURIComponent(subject)
-          + '&body=' + encodeURIComponent(body);
-
-        status.style.display = 'block';
-        window.location.href = mailtoLink;
-      });
-    </script>
-    <p class="muted" style="font-size:0.85rem;margin-top:10px;">This opens your default email app with the message pre-filled, ready to send to info@menduce.com.</p>
+    <p class="muted" style="font-size:0.85rem;margin-top:10px;">Your message will be sent directly to info@menduce.com.</p>
   </div>
 </div>
 
@@ -185,6 +192,78 @@
     </div>
   </div>
 </footer>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  // ========== YOUR EMAILJS CREDENTIALS ==========
+  const EMAILJS_PUBLIC_KEY = 'buoOub_FmFf6TZrOm'; // Your Public Key
+  const EMAILJS_SERVICE_ID = 'service_h4df6he'; // Your Service ID
+  const EMAILJS_TEMPLATE_ID = 'template_wy8ku1g'; // Your Template ID
+  // =============================================
+
+  // Initialize EmailJS
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  const form = document.getElementById('contactForm');
+  const sendButton = document.getElementById('sendButton');
+  const statusDiv = document.getElementById('formStatus');
+
+  // Helper to show status messages
+  function setStatus(message, type) {
+    statusDiv.textContent = message;
+    statusDiv.className = type; // 'success', 'error', or 'loading'
+    statusDiv.style.display = 'block';
+  }
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value.trim();
+
+    // Basic validation
+    if (!name || !email || !message) {
+      setStatus('Please fill in all required fields (Name, Email, and Message).', 'error');
+      return;
+    }
+
+    // Disable button and show loading state
+    sendButton.disabled = true;
+    sendButton.textContent = 'Sending...';
+    setStatus('Sending your message...', 'loading');
+
+    // Prepare data for EmailJS
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      service: service,
+      message: message,
+      // Optional: Add a timestamp
+      timestamp: new Date().toLocaleString()
+    };
+
+    // Send the email
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(function(response) {
+        console.log('Email sent successfully:', response);
+        setStatus('✅ Thank you! Your message has been sent. We\'ll reply within one business day.', 'success');
+        form.reset();
+        sendButton.disabled = false;
+        sendButton.textContent = 'Send request';
+      })
+      .catch(function(error) {
+        console.error('EmailJS Error:', error);
+        setStatus('❌ Oops! Something went wrong. Please try again, or email us directly at info@menduce.com.', 'error');
+        sendButton.disabled = false;
+        sendButton.textContent = 'Send request';
+      });
+  });
+</script>
 
 <script src="js/nav.js"></script>
 </body>
